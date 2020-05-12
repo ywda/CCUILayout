@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+    <dict>
+        <key>bind</key>
+        <integer>1</integer>
+        <key>name</key>
+        <string>UICell_000</string>
+        <key>height</key>
+        <integer>90</integer>
+        <key>desc</key>
+        <string>描述：UICell_000</string>
+    </dict>
+    <dict>
+        <key>bind</key>
+        <integer>2</integer>
+        <key>name</key>
+        <string>UIView_000</string>
+        <key>height</key>
+        <integer>50</integer>
+        <key>desc</key>
+        <string>描述：UIView_000</string>
+    </dict>
+    <dict>
+        <key>bind</key>
+        <integer>3</integer>
+        <key>name</key>
+        <string>UIView_001</string>
+        <key>height</key>
+        <integer>80</integer>
+        <key>desc</key>
+        <string>描述：UIView_001</string>
+    </dict>
+    <dict>
+        <key>bind</key>
+        <integer>4</integer>
+        <key>name</key>
+        <string>UICell_001</string>
+        <key>height</key>
+        <integer>80</integer>
+        <key>desc</key>
+        <string>描述：UICell_001</string>
+    </dict>
+</array>
+</plist>
