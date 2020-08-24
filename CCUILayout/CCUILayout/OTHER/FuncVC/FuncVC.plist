@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>bind</key>
+		<integer>1</integer>
+		<key>name</key>
+		<string>FuncCELL</string>
+		<key>height</key>
+		<integer>90</integer>
+		<key>desc</key>
+		<string>描述： CCUILayoutBaseTabVC + plist 创建</string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>2</integer>
+		<key>name</key>
+		<string>FuncCELL</string>
+		<key>height</key>
+		<integer>90</integer>
+		<key>desc</key>
+		<string>描述： CCUILayoutBaseVC + plist 创建</string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>3</integer>
+		<key>name</key>
+		<string>FuncCELL</string>
+		<key>height</key>
+		<integer>90</integer>
+		<key>desc</key>
+		<string>描述： CCUILayoutBaseTabVC + 实例数组 创建</string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>4</integer>
+		<key>name</key>
+		<string>FuncCELL</string>
+		<key>height</key>
+		<integer>90</integer>
+		<key>desc</key>
+		<string>描述： CCUILayoutBaseVC + 实例数组 创建</string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>5</integer>
+		<key>name</key>
+		<string>FuncCELL</string>
+		<key>height</key>
+		<integer>90</integer>
+		<key>desc</key>
+		<string>描述： CCUILayoutBaseView + plist 创建</string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>6</integer>
+		<key>name</key>
+		<string>FuncCELL</string>
+		<key>height</key>
+		<integer>90</integer>
+		<key>desc</key>
+		<string>描述： CCUILayoutBaseView + 实例数组 创建</string>
+	</dict>
+</array>
+</plist>

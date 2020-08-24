@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>bind</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>WDZSegLineView</string>
+		<key>height</key>
+		<integer>10</integer>
+		<key>desc</key>
+		<string>【分割线】sakjdgasjdgkashdjakgsgahsgdhjaksghdjagskhdgahjsgdhegkwadoqektwiuerotquweygakjdgasjdgkashdjakgsgahsgdhjaksghdjagskhdgahjsgdhegkwadoqektwiuerotquweygakjdgasjdgkashdjakgsgahsgdhjaksghdjagskhdgahjsgdhegkwadoqektwiuerotquweygakjdgasjdgkashdjakgsgahsgdhjaksghdjagskhdgahjsgdhegkwadoqektwiuerotquweygakjdgasjdgkashdjakgsgahsgdhjaksghdjagskhdgahjsgdhegkwadoqektwiuerotquweygakjdgasjdgkashdjakgsgahsgdhjaksghdjagskhdgahjsgdhegkwadoqektwiuerotquweygakjdgasjdgkashdjakgsgahsgdhjaksghdjagskhdgahjsgdhegkwadoqektwiuerotquweygakjdgasjdgkashdjakgsgahsgdhjaksghdjagskhdgahjsgdhegkwadoqektwiuerotquweygakjdgasjdgkashdjakgsgahsgdhjaksghdjagskhdgahjsgdhegkwadoqektwiuerotquweyg——说明文字结束标识_测试——✅</string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>1</integer>
+		<key>name</key>
+		<string>WDZMyInfoItem00</string>
+		<key>height</key>
+		<integer>50</integer>
+		<key>desc</key>
+		<string>👉描述：头像不是每一个方法都返回对象，但是valueForKey：总是返回一个id对象，如果原本的变量类型是值类型或者结构体，返回值会封装成NSNumber或者NSValue对象。
+        这两个类会处理从数字，布尔值到指针和结构体任何类型。然后开以者需要手动转换成原来的类型。
+        尽管valueForKey：会自动将值类型封装成对象，但是setValue：forKey：却不行。你必须手动将值类型转换成NSNumber或者NSValue类型，才能传递过去。
+        因为传递进去和取出来的都是id类型，所以需要开发者自己担保类型的正确性，运行时Objective-C在发送消息的会检查类型，如果错误会直接抛出异常。——说明文字结束标识_测试——✅</string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>-1</integer>
+		<key>name</key>
+		<string>WDZSegLineView</string>
+		<key>height</key>
+		<integer>10</integer>
+		<key>desc</key>
+		<string>【分割线】——说明文字结束标识_测试——✅</string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>2</integer>
+		<key>name</key>
+		<string>WDZMyInfoItem00</string>
+		<key>height</key>
+		<integer>50</integer>
+		<key>desc</key>
+		<string>👉描述：员工照 ```+ (NSNumber*)numberWithChar:(char)value;
+        + (NSNumber*)numberWithUnsignedChar:(unsignedchar)value;
+        + (NSNumber*)numberWithShort:(short)value;
+        + (NSNumber*)numberWithUnsignedShort:(unsignedshort)value;
+        + (NSNumber*)numberWithInt:(int)value;
+        + (NSNumber*)numberWithUnsignedInt:(unsignedint)value;
+        + (NSNumber*)numberWithLong:(long)value;
+        + (NSNumber*)numberWithUnsignedLong:(unsignedlong)value;
+        + (NSNumber*)numberWithLongLong:(longlong)value;
+        + (NSNumber*)numberWithUnsignedLongLong:(unsignedlonglong)value;
+        + (NSNumber*)numberWithFloat:(float)value;
+        + (NSNumber*)numberWithDouble:(double)value;
+        + (NSNumber*)numberWithBool:(BOOL)value;
+        + (NSNumber*)numberWithInteger:(NSInteger)valueNS_AVAILABLE(10_5,2_0);
+        + (NSNumber*)numberWithUnsignedInteger:(NSUInteger)valueNS_AVAILABLE(10_5,2_0);```——说明文字结束标识_测试——✅</string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<string>-2</string>
+		<key>name</key>
+		<string>WDZSegLineView</string>
+		<key>height</key>
+		<integer>10</integer>
+		<key>desc</key>
+		<string>【分割线】——说明文字结束标识_测试——✅</string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>3</integer>
+		<key>name</key>
+		<string>WDZMyInfoItem01</string>
+		<key>height</key>
+		<integer>50</integer>
+		<key>desc</key>
+		<string>👉描述：姓名
+        NSArray* arrBooks = @[book1,book2,book3,book4];
+        NSNumber* sum = [arrBooks valueForKeyPath:@"@sum.price"];
+        NSLog(@"sum:%f",sum.floatValue);
+        NSNumber* avg = [arrBooks valueForKeyPath:@"@avg.price"];
+        NSLog(@"avg:%f",avg.floatValue);
+        NSNumber* count = [arrBooks valueForKeyPath:@"@count"];
+        NSLog(@"count:%f",count.floatValue);
+        NSNumber* min = [arrBooks valueForKeyPath:@"@min.price"];
+        NSLog(@"min:%f",min.floatValue);
+        NSNumber* max = [arrBooks valueForKeyPath:@"@max.price"];
+        NSLog(@"max:%f",max.floatValue);
+        ——说明文字结束标识_测试——✅</string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>-3</integer>
+		<key>name</key>
+		<string>WDZMyInfoSegLine</string>
+		<key>height</key>
+		<integer>10</integer>
+		<key>desc</key>
+		<string>【分割线】——说明文字结束标识_测试——✅</string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>4</integer>
+		<key>name</key>
+		<string>WDZMyInfoItem01</string>
+		<key>height</key>
+		<integer>50</integer>
+		<key>desc</key>
+		<string>👉描述：手机号
+        Book *book1 = [Book new];
+        book1.name = @"The Great Gastby";
+        book1.price = 40;
+        Book *book2 = [Book new];
+        book2.name = @"Time History";
+        book2.price = 20;
+        Book *book3 = [Book new];
+        book3.name = @"Wrong Hole";
+        book3.price = 30;
+        
+        Book *book4 = [Book new];
+        book4.name = @"Wrong Hole";
+        book4.price = 10;
+        
+        NSArray* arrBooks = @[book1,book2,book3,book4];
+        
+        NSLog(@"distinctUnionOfObjects");
+        NSArray* arrDistinct = [arrBooks valueForKeyPath:@"@distinctUnionOfObjects.price"];
+        for (NSNumber *price in arrDistinct) {
+            NSLog(@"%f",price.floatValue);
+        }
+        NSLog(@"unionOfObjects");
+        NSArray* arrUnion = [arrBooks valueForKeyPath:@"@unionOfObjects.price"];
+        for (NSNumber *price in arrUnion) {
+            NSLog(@"%f",price.floatValue);
+        }
+        ——说明文字结束标识_测试——✅</string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<string>-4</string>
+		<key>name</key>
+		<string>WDZSegLineView</string>
+		<key>height</key>
+		<integer>10</integer>
+		<key>desc</key>
+		<string>【分割线】
+        ——说明文字结束标识_测试——✅</string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>5</integer>
+		<key>name</key>
+		<string>WDZMyInfoItem01</string>
+		<key>height</key>
+		<integer>50</integer>
+		<key>desc</key>
+		<string>👉描述：邮箱
+            
+            2018-05-06 22:47:05.538899+0800 KVCKVO[38474:13343992] ObjectA
+            2018-05-06 22:47:05.539242+0800 KVCKVO[38474:13343992] NSKVONotifying_ObjectA
+
+            重写dealloc
+
+            系统重写 dealloc 方法来释放资源。
+
+            重写_isKVOA
+
+            这个私有方法是用来标示该类是一个 KVO 机制声称的类。
+
+            如何证明被观察的类被重写了以上方法
+
+            参考用代码探讨 KVC/KVO 的实现原理这篇文章，通过代码一步步分析，从断点截图来看，可以很好证明以上被重写的方法。
+
+            关注我
+
+            欢迎关注公众号：jackyshan，技术干货首发微信，第一时间推送。
+
+
+            ——说明文字结束标识_测试——✅</string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<string>-5</string>
+		<key>name</key>
+		<string>WDZSegLineView</string>
+		<key>height</key>
+		<integer>10</integer>
+		<key>desc</key>
+		<string>【分割线】——说明文字结束标识_测试——✅</string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>6</integer>
+		<key>name</key>
+		<string>WDZMyInfoItem01</string>
+		<key>height</key>
+		<integer>50</integer>
+		<key>desc</key>
+		<string>👉描述：部门
+        KVC使用
+
+        KVC在iOS开发中是绝不可少的利器，这种基于运行时的编程方式极大地提高了灵活性，简化了代码，甚至实现很多难以想像的功能，KVC也是许多iOS开发黑魔法的基础。
+        下面列举iOS开发中KVC的使用场景.
+
+        动态地取值和设值
+
+        利用KVC动态的取值和设值是最基本的用途了。
+
+        用KVC来访问和修改私有变量
+
+        对于类里的私有属性，Objective-C是无法直接访问的，但是KVC是可以的。
+
+        Model和字典转换
+
+        这是KVC强大作用的又一次体现，KVC和Objc的runtime组合可以很容易的实现Model和字典的转换。
+
+        修改一些控件的内部属性
+
+        这也是iOS开发中必不可少的小技巧。众所周知很多UI控件都由很多内部UI控件组合而成的，但是Apple度没有提供这访问这些控件的API，这样我们就无法正常地访问和修改这些控件的样式。
+        而KVC在大多数情况可下可以解决这个问题。最常用的就是个性化UITextField中的placeHolderText了。
+
+        操作集合
+
+        Apple对KVC的valueForKey:方法作了一些特殊的实现，比如说NSArray和NSSet这样的容器类就实现了这些方法。所以可以用KVC很方便地操作集合。
+
+        用KVC实现高阶消息传递
+
+        当对容器类使用KVC时，valueForKey:将会被传递给容器中的每一个对象，而不是容器本身进行操作。结果会被添加进返回的容器中，这样，开发者可以很方便的操作集合来返回另一个集合。
+        ——说明文字结束标识_测试——✅
+        </string>
+	</dict>
+</array>
+</plist>

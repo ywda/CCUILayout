@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>bind</key>
+		<integer>1</integer>
+		<key>name</key>
+		<string>WDZLoginCenterItem00</string>
+		<key>height</key>
+		<integer>30</integer>
+		<key>desc</key>
+		<string> 切换服务器按钮
+            -- 描述 --
+        </string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>WDZLoginCenterItem01</string>
+		<key>height</key>
+		<integer>100</integer>
+		<key>desc</key>
+		<string> APP的logo图
+            -- 描述 --
+        </string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>1</integer>
+		<key>name</key>
+		<string>WDZLoginCenterItem02</string>
+		<key>height</key>
+		<integer>44</integer>
+		<key>desc</key>
+		<string> 手机号码
+            -- 描述 --
+        </string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>1</integer>
+		<key>name</key>
+		<string>WDZLoginCenterItem03</string>
+		<key>height</key>
+		<integer>44</integer>
+		<key>desc</key>
+		<string>电话号码/用户名
+            -- 描述 --
+        </string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>1</integer>
+		<key>name</key>
+		<string>WDZLoginCenterItem02</string>
+		<key>height</key>
+		<integer>50</integer>
+		<key>desc</key>
+		<string> 密码
+            -- 描述 --
+        </string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>1</integer>
+		<key>name</key>
+		<string>WDZLoginCenterItem02</string>
+		<key>height</key>
+		<integer>50</integer>
+		<key>desc</key>
+		<string> 验证码
+            -- 描述 --
+        </string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>1</integer>
+		<key>name</key>
+		<string>WDZLoginCenterItem03</string>
+		<key>height</key>
+		<integer>50</integer>
+		<key>desc</key>
+		<string> 登录按钮
+            -- 描述 --
+        </string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>1</integer>
+		<key>name</key>
+		<string>WDZLoginCenterItem04</string>
+		<key>height</key>
+		<integer>50</integer>
+		<key>desc</key>
+		<string> 账号登录
+            -- 描述 --
+        </string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>1</integer>
+		<key>name</key>
+		<string>WDZLoginCenterSegLine</string>
+		<key>height</key>
+		<integer>50</integer>
+		<key>desc</key>
+		<string> 大的分割线
+            -- 描述 --
+        </string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>1</integer>
+		<key>name</key>
+		<string>WDZLoginCenterItem05</string>
+		<key>height</key>
+		<integer>50</integer>
+		<key>desc</key>
+		<string> 忘记密码 | 新用户注册
+            -- 描述 --
+        </string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>1</integer>
+		<key>name</key>
+		<string>WDZLoginCenterItem06</string>
+		<key>height</key>
+		<integer>50</integer>
+		<key>desc</key>
+		<string> 版本号信息
+            -- 描述 --
+        </string>
+	</dict>
+</array>
+</plist>

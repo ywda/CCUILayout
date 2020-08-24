@@ -7,8 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "CCUILayoutDemoVC.h"
-#import "WDZMyInforVC.h"   // 重写`我的`页面
+#import "FuncVC.h"
+
 
 @interface ViewController ()
 
@@ -18,17 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    // demo1 实现
-//    CCUILayoutDemoVC *vc = [CCUILayoutDemoVC new];
-//    [self.navigationController pushViewController:vc animated:YES];
-    
-    // demo2 实现
-    WDZMyInforVC *vc = [WDZMyInforVC new];
+    FuncVC *vc = [FuncVC new];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

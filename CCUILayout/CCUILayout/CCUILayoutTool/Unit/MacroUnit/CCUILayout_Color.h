@@ -29,6 +29,7 @@
 #define CCUILayout_kThemeColor        UIColor.WDZ_themeColor
 #define CCUILayout_TEXT_COLOR1        CCUILayout_BLACK
 #define CCUILayout_TEXT_COLOR2        CCUILayout_DARK
+#define CCUILayout_DEBUG_RANDOM_COLOR (IS_OPEN_CCUILayout_DEBUG_COLOR ? CCUILayout_RANDOM_COLOR_LIGHT :  CCUILayout_WHITE)
 */
 
 /* TODO: --- 👇 非暗黑 适配 <勿删-方便不同分支上代码拷贝不出问题> 促使多分支代码同步*/
@@ -48,6 +49,7 @@
 #define CCUILayout_kThemeColor        CCUILayout_YELLOW
 #define CCUILayout_TEXT_COLOR1        CCUILayout_BLACK
 #define CCUILayout_TEXT_COLOR2        CCUILayout_DARK
+#define CCUILayout_DEBUG_RANDOM_COLOR (IS_OPEN_CCUILayout_DEBUG_COLOR ? CCUILayout_RANDOM_COLOR_LIGHT :  CCUILayout_WHITE)
 
 // 轻随机色
 #define CCUILayout_RANDOM_COLOR_LIGHT CCUILayout_RANDOM_COLOR_LIGHT_MAKE(arc4random_uniform(156)+100, arc4random_uniform(156)+100, arc4random_uniform(156)+100, arc4random_uniform(156)+100)
