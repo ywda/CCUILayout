@@ -11,8 +11,9 @@
 
 @interface CCUILayoutBaseVC ()<UITableViewDelegate,UITableViewDataSource>
 
-@property(nonatomic,strong)UITableView *tableView;
+
 @property(nonatomic,strong)CCUILayoutBaseMode *base;
+@property(nonatomic,assign)UITableViewStyle pageType;
 
 @end
 
@@ -22,6 +23,7 @@
 {
     self = [super init];
     if (self) {
+        self.pageType = UITableViewStyleGrouped;
         self.base = [CCUILayoutBaseMode new];
     }
     return self;
@@ -31,8 +33,20 @@
 {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:self.view.frame
-                                                  style:UITableViewStyleGrouped];
+                                                  style:self.pageType];
         [_tableView  setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+        
+        // FIXME: 解决刷新的时候跳动的问题
+        if (@available(iOS 11,*)) {
+            
+            UITableView.appearance.estimatedRowHeight = 0;
+            UITableView.appearance.estimatedSectionHeaderHeight = 0;
+            UITableView.appearance.estimatedSectionFooterHeight = 0;
+            
+            _tableView.estimatedRowHeight = 0;
+            _tableView.estimatedSectionHeaderHeight = 0;
+            _tableView.estimatedSectionFooterHeight = 0;
+        }
     }
     return _tableView;
 }
@@ -60,6 +74,27 @@
     NSString *fileName = isDebug ? [cName stringByAppendingFormat:@"_debug"] : cName;
     
     [self configUIControlsWithFilename:fileName];
+}
+
+- (void) configUIControlsIsLoadDebug:(BOOL)isDebug
+                        mainTabEdges:(UIEdgeInsets)edges
+                          adapterApp:(BOOL)isAdapter
+                           pageStyle:(UITableViewStyle)style{
+    self.pageType = style;
+    [self configUIControlsIsLoadDebug:isDebug mainTabEdges:edges adapterApp:isAdapter];
+}
+
+- (void) configUIControlsIsLoadDebug:(BOOL)isDebug
+                        mainTabEdges:(UIEdgeInsets)edges
+                          adapterApp:(BOOL)isAdapter
+                           pageColor:(UIColor*)color{
+    if (!color) {
+        [self configUIControlsIsLoadDebug:isDebug mainTabEdges:edges adapterApp:isAdapter];
+    }else{
+        self.pageType = UITableViewStylePlain;
+        [self configUIControlsIsLoadDebug:isDebug mainTabEdges:edges adapterApp:isAdapter];
+        self.tableView.backgroundColor = color;
+    }
 }
 
 - (void) configUIControls:(NSArray<UIResponder *> *)subUis
@@ -120,8 +155,8 @@
         __weak typeof(self) ws = self;
         
         self.base.uisubviewsRb = ^(NSArray<UIResponder *> *uis, NSMutableArray<CCUILayoutUiMode *> *uims) {
-            ws.subviews = [NSArray arrayWithArray:uis];
-            ws.subviewModes = [NSMutableArray arrayWithArray:uims];;
+            ws.cc_subviews = [NSArray arrayWithArray:uis];
+            ws.cc_subviewModes = [NSMutableArray arrayWithArray:uims];;
         };
     }
     
@@ -231,14 +266,46 @@
 }
 
 /** MARK: 页面数据有所变动，及时更新页面布局 */
-- (void) updateUIControls:(NSMutableArray<CCUILayoutUiMode*> *)subviewModes
+- (void) updateUIControls:(NSMutableArray<CCUILayoutUiMode*> *)cc_subviewModes animation:(BOOL)isOpen
 {
-    self.base.dbMode = [NSMutableArray arrayWithArray:subviewModes];
-    [CCSpeedyTool cc_setInAanimation:self.tableView];
+    self.base.dbMode = [NSMutableArray arrayWithArray:cc_subviewModes];
+    if (isOpen) {
+        [CCSpeedyTool cc_setInAanimation:self.tableView delay:0.25];
+    }
     [self.tableView reloadData];
 }
 
-/** MARK: 是否开启 分区布局调试 设置<默认关闭> */
+/** MARK: 页面某一块UI元素变动，仅仅刷新某一块布局 */
+- (void) updateUIControl:(CCUILayoutUiMode*)cc_uimode animation:(BOOL)isOpen {
+     for (int i = 0; i < self.base.dbMode.count; i++) {
+         
+         CCUILayoutUiMode *one = self.base.dbMode[i];
+         
+         if (one.bind == cc_uimode.bind &&
+             [one.name isEqualToString:cc_uimode.name]) {
+             
+             [self.base.dbMode replaceObjectAtIndex:i withObject:cc_uimode];
+             NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:i];
+             
+             if (isOpen) {
+                 
+                 [UIView animateWithDuration:0.25 animations:^{
+                     [self.tableView reloadSections:indexSet
+                                   withRowAnimation:UITableViewRowAnimationFade];
+                 }];
+                 
+             }else{
+                 
+                 [self.tableView reloadSections:indexSet
+                               withRowAnimation:UITableViewRowAnimationNone];
+             }
+             
+             break;
+         }
+     }
+}
+
+/** MARK: 是否开启 分区布局调试 设置<默认关闭>【要在 viewDidLoad 中调用】 */
 - (void) setDebugShowSection:(BOOL)isOpen
 {
     self.base.isDebugShowSection = isOpen;
@@ -258,11 +325,29 @@
         if (((NSArray*)change[@"new"]).count > 0) {
             
             if (self.base.isDebugShowSection == YES) {
-                self.base.dbElementNotes = [CCUILayoutDebugViewMode getCalculateNotesModesFrom:self.base.dbMode];
+                self.base.dbElementNotes = [CCUILayoutDebugUiMode getCalculateNotesModesFrom:self.base.dbMode];
                 [self.tableView reloadData];
             }
         }
     }
+}
+
+/** MARK: 根据 bind值 快速获取UI上的 uiMode */
+- (CCUILayoutUiMode* _Nullable) getClmFrom:(NSInteger) bindNum {
+    
+    if (self.cc_subviewModes.count) {
+        
+        for (NSInteger i = 0; i < self.cc_subviewModes.count; i++) {
+            CCUILayoutUiMode *object = self.cc_subviewModes[i];
+//            object.enumIndex = i;
+            if (object.bind.integerValue == bindNum) {
+                
+                return object;
+                break;
+            }
+        }
+    }
+    return Nil;
 }
 
 - (void)dealloc

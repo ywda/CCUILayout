@@ -9,10 +9,10 @@
 #ifndef CCUILayout_Debug_h
 #define CCUILayout_Debug_h
 
+
 // MARK: 是否开启调试颜色
 // ————————————————————————————————————————————————————————
-#define IS_OPEN_CCUILayout_DEBUG_COLOR  YES
-
+#define IS_OPEN_CCUILayout_DEBUG_COLOR  NO
 
 
 #endif /* CCUILayout_Debug_h */

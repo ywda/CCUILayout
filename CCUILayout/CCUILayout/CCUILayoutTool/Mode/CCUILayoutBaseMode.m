@@ -7,6 +7,7 @@
 //
 
 #import "CCUILayoutBaseMode.h"
+#import "CCUILayoutDebugView.h"
 
 @implementation CCUILayoutBaseMode
 
@@ -32,7 +33,7 @@
 
        NSString *className = self.dbMode[i].name;
        
-       if ([self classifiedUiControlsBy:className] == ccl_type0) {
+       if ([self classifiedUiControlsBy:className] == CCUILayoutMaskType0) {
            
            //... 复用实现 ...
            NSString *rucMask = self.reuseIdentifiers[i];
@@ -44,7 +45,7 @@
            cell.CLM = self.dbMode[i];
            [self.dbUi addObject:cell];
            
-       }else if([self classifiedUiControlsBy:className] == ccl_type1){
+       }else if([self classifiedUiControlsBy:className] == CCUILayoutMaskType1){
            
            CCUILayoutView * tmp= [NSClassFromString(className) new];
            tmp.tag = (100 + i);
@@ -81,7 +82,7 @@
 // 防止发生错误的重用
 -(NSString*)registerClassWith:(CCUILayoutUiMode *)obj by:(NSInteger) section view:(UITableView*)tableView
 {
-    BOOL isCustomerCell = ([self classifiedUiControlsBy:obj.name] == ccl_type0) ? YES : NO;
+    BOOL isCustomerCell = ([self classifiedUiControlsBy:obj.name] == CCUILayoutMaskType0) ? YES : NO;
     Class CELL = isCustomerCell ? [NSClassFromString(obj.name) class] : [CCUILayoutCell class];
     
     NSString *cellMask = [obj.name stringByAppendingFormat:@"_%ld",section];
@@ -95,16 +96,16 @@
     if ([NSClassFromString(className) isSubclassOfClass:[CCUILayoutCell class]] ||
         [NSClassFromString(className) isSubclassOfClass:[UITableViewCell class]]) {
         
-        return ccl_type0;
+        return CCUILayoutMaskType0;
         
     }else if([NSClassFromString(className) isSubclassOfClass:[CCUILayoutView class]] ||
              [NSClassFromString(className) isSubclassOfClass:[UIView class]]){
         
-        return ccl_type1;
+        return CCUILayoutMaskType1;
         
     }else {
         
-        return ccl_type2;
+        return CCUILayoutMaskType2;
     }
 }
 
@@ -122,11 +123,11 @@
     // 防止多次添加的标记 tag
     NSInteger tag = (100+indexPath.section);
     
-    if ([self classifiedUiControlsBy:className] == ccl_type0) {
+    if ([self classifiedUiControlsBy:className] == CCUILayoutMaskType0) {
     
         return cell;
         
-    }else if([self classifiedUiControlsBy:className] == ccl_type1){
+    }else if([self classifiedUiControlsBy:className] == CCUILayoutMaskType1){
         
         //... 创建一个 VIEW 放到 CELL 上 ...
         //... 防止多次添加
@@ -153,7 +154,17 @@
     }
 
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.backgroundColor = CCUILayout_RANDOM_COLOR_LIGHT;
+    cell.backgroundColor = UIColor.clearColor;
+    cell.contentView.backgroundColor = UIColor.clearColor;
+    
+    // FIXME: 这么处理是外部有·隐藏-显示·某块 VIEW 元素的时候背景色导致的突兀效果处理
+    // 动画的·隐藏-显示·的时候做一处突兀处理
+    UIColor *color = self.dbMode[indexPath.section].bgColor;
+    if (color) {
+        cell.backgroundColor = color;
+        cell.contentView.backgroundColor = color;
+    }
+    
     return cell;
 }
 

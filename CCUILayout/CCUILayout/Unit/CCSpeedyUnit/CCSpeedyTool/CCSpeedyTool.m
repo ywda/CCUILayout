@@ -35,6 +35,22 @@
     return anyControl;
 }
 
+// TODO:快速添加阴影效果 <注意，剪裁为NO>
++ (void)cc_setUpShadowLayerWithControl:(id)anyControl
+                               opacity:(CGFloat)opacity
+                                shadow:(UIColor*)shadowColor
+                                offSet:(CGSize)offset
+                          shadowRadius:(NSInteger)radius
+
+{
+     CALayer *layer=[(UIControl*)anyControl layer];
+     layer.shadowOffset = offset;
+     layer.shadowOpacity = opacity;
+     layer.shadowRadius = radius;
+     layer.shadowColor = shadowColor.CGColor;
+     layer.masksToBounds = NO;
+}
+
 // TODO: 选取部分数据变色（label）
 /**
  @param label label
@@ -104,7 +120,7 @@
         
         make.left.mas_equalTo(view);
         make.bottom.mas_equalTo(view);
-        make.size.mas_equalTo(CGSizeMake(view.width, 1));
+        make.size.mas_equalTo(CGSizeMake(view.frame.size.width, 1));
     }];
 }
 
@@ -127,7 +143,7 @@
         
         make.right.mas_equalTo(view);
         make.centerY.mas_equalTo(view);
-        make.size.mas_equalTo(CGSizeMake(1, view.height * ratio));
+        make.size.mas_equalTo(CGSizeMake(1, view.frame.size.height * ratio));
     }];
 }
 
@@ -166,13 +182,20 @@
                          Sure:(dispatch_block_t)sureBlock
                        Cancel:(dispatch_block_t)cancelBlock
 {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:message preferredStyle:UIAlertControllerStyleAlert];
+    // 温馨提示
+    NSString *wxts = @"温馨提示";//WDZLocalizedString(@"wenxintishi", nil);
+    // 取消
+    NSString *qx = @"取消";//WDZLocalizedString(@"quxiao", nil);
+    // 确定
+    NSString *qd = @"确定";//WDZLocalizedString(@"queding", nil);
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:wxts message:message preferredStyle:UIAlertControllerStyleAlert];
     //取消
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:qx style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
         !cancelBlock ? : cancelBlock();
     }];
     //确定
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:qd style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
         !sureBlock ? : sureBlock();
     }];
     [alertController addAction:cancelAction];
@@ -184,10 +207,15 @@
 + (void)cc_SetUpAlterWithView:(UIViewController *)vc
                       Message:(NSString *)message
                          Sure:(dispatch_block_t)sureBlock{
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:message preferredStyle:UIAlertControllerStyleAlert];
+    // 温馨提示
+    NSString *wxts = @"温馨提示";//WDZLocalizedString(@"wenxintishi", nil);
+    // 确定
+    NSString *qd = @"确定";//WDZLocalizedString(@"queding", nil);
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:wxts message:message preferredStyle:UIAlertControllerStyleAlert];
 
     //确定
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:qd style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
         !sureBlock ? : sureBlock();
     }];
     [alertController addAction:okAction];
@@ -212,14 +240,36 @@
     }
 }
 
-// TODO:切换动画
+/** MARK: 👇 切换动画 <禁止在TableView 的 CELL 上使用,会掉帧> */
 + (void)cc_setInAanimation:(UIView*)view{
+    // 默认是 0.3秒
+    [CCSpeedyTool cc_setInAanimation:view delay:0.3];
+}
+
++ (void)cc_setInAanimation:(UIView*)view delay:(CGFloat)delay
+{
     CATransition * transition = [CATransition animation];
     transition.type = @"moveOut";
     transition.subtype = @"fromCenter";
-    transition.duration = 0.3;
+    transition.duration = (delay == 0)? 0.3 : delay;
     [view.window.layer removeAllAnimations];
     [view.window.layer addAnimation:transition forKey:nil];
+}
+
+/** MARK: 👇 切换动画 <可以在 TableView 的 CELL 上使用,不会掉帧> */
++ (void)cc_setInSlideAanimation:(UIView*)view{
+    // 默认是 0.3秒
+    [CCSpeedyTool cc_setInSlideAanimation:view delay:0.3];
+}
+
++ (void)cc_setInSlideAanimation:(UIView*)view delay:(CGFloat)delay{
+    
+    CATransition * transition = [CATransition animation];
+    transition.type = @"moveOut";
+    transition.subtype = @"fromCenter";
+    transition.duration = (delay == 0)? 0.3 : delay;
+    [view.layer removeAllAnimations];
+    [view.layer addAnimation:transition forKey:nil];
 }
 
 // TODO: 是否是空字符串

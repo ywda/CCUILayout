@@ -22,6 +22,10 @@ NS_ASSUME_NONNULL_BEGIN
 /** CELL 或者 VIEW 的布局 用途描述 */
 @property (nonatomic, copy)   NSString * desc;
 
+/** 外部布局的时候遍历重新赋值下标 */
+//@property (nonatomic, assign) NSInteger enumIndex;
+/** 某些情况下要特殊化设置 CELL 的背景色 */
+@property (nonatomic, strong) UIColor * bgColor;
 
 @end
 

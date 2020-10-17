@@ -14,10 +14,10 @@
 #import "CCUILayoutBaseTabVC.h"
 #import "CCUILayoutBaseView.h"
 
-
 #import "CCUILayoutUiMode.h"
 #import "CCUILayoutCell.h"
 #import "CCUILayoutView.h"
+#import "CCUILayoutSegLineView.h"
 
 
 #endif /* CCUILayoutToolHeader_h */

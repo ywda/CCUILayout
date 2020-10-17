@@ -41,7 +41,7 @@
     NSMutableArray<CCUILayoutUiMode*> * tmpAry = [NSMutableArray array];
     NSMutableSet *tmpBinds = [NSMutableSet set];
     
-    for (int i = 0; i < subUis.count; i++) {
+    for (NSInteger i = 0; i < subUis.count; i++) {
         
         CCUILayoutUiMode *clm = subLModes[i];
         
@@ -68,6 +68,7 @@
         if (clm.desc.length == 0) {
             clm.desc = [NSString stringWithFormat:@"%@ 类对象实例，bind = %d",clm.name,[clm.bind intValue]];
         }
+//        clm.enumIndex = i;
         [tmpAry addObject:clm];
     }
     

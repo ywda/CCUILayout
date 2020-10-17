@@ -7,14 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CCUILayout_Unit_Header.h"
+#import "CCUILayoutDebugUiMode.h"
+#import "CCUILayoutUiMode.h"
+#import "CCUILayoutView.h"
+#import "CCUILayoutCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CCUILayoutBaseMode : NSObject
 
 
-// TODO: ———————————— 👇 属性相关 ————————————
+// MARK: ———————————— 👇 属性相关 ————————————
 
 /** 布局原型  列表 */
 @property(nonatomic,strong)NSMutableArray<CCUILayoutUiMode*> *dbMode;
@@ -23,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** 注册防止重用的 reuseIdentifier  列表 */
 @property(nonatomic,strong)NSMutableArray<NSString*> *reuseIdentifiers;
 /** Element View 描述说明数组 */
-@property(nonatomic,strong)NSArray<CCUILayoutDebugViewMode*> *dbElementNotes;
+@property(nonatomic,strong)NSArray<CCUILayoutDebugUiMode*> *dbElementNotes;
 /** tableView 的四周边距 */
 @property(nonatomic)UIEdgeInsets edges;
 
@@ -36,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
-// TODO: ———————————— 👇 方法相关 ————————————
+// MARK: ———————————— 👇 方法相关 ————————————
 
 // MARK: 创建 TableView 的页面元素
 - (void) create_SubViewsFor:(UITableView*)tableView;

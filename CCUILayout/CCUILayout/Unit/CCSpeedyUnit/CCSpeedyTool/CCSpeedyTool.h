@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "UIView+Category.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -29,6 +29,20 @@ NS_ASSUME_NONNULL_BEGIN
                    SetBorderWidth:(NSInteger)width
                    SetBorderColor:(UIColor *)borderColor
                  canMasksToBounds:(BOOL)can;
+
+// TODO:快速添加阴影效果
+/**
+ @param anyControl 控件
+ @param opacity 透明度
+ @param shadowColor 阴影色
+ @param offset 偏移量
+ @param radius 圆角值
+ **/
++ (void)cc_setUpShadowLayerWithControl:(id)anyControl
+                               opacity:(CGFloat)opacity
+                                shadow:(UIColor*)shadowColor
+                                offSet:(CGSize)offset
+                          shadowRadius:(NSInteger)radius;
 
 
 // TODO: 选取部分数据变色（label）
@@ -78,7 +92,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)cc_setUpBezierPathCircularLayerWithControl:(UIButton *)control
                                               size:(CGSize)size;
 
-
 // TODO: label首行缩进
 /**
  @param label label
@@ -104,8 +117,13 @@ IndentationFortheFirstLineWith:(CGFloat)emptylen;
 // TODO:触动
 + (void)cc_callFeedback;
 
-// TODO:切换动画
+/** MARK: 👇 切换动画 <禁止在TableView 的 CELL 上使用,会掉帧> */
 + (void)cc_setInAanimation:(UIView*)view;
++ (void)cc_setInAanimation:(UIView*)view delay:(CGFloat)delay;
+
+/** MARK: 👇 切换动画 <可以在 TableView 的 CELL 上使用,不会掉帧> */
++ (void)cc_setInSlideAanimation:(UIView*)view;
++ (void)cc_setInSlideAanimation:(UIView*)view delay:(CGFloat)delay;
 
 // TODO: 是否是空字符串
 + (BOOL)cc_isEmptyStr:(NSString*)str;

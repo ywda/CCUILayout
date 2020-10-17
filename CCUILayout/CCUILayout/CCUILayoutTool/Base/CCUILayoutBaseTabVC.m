@@ -189,25 +189,47 @@
     };
 }
 
-/** MARK: 返回用户点击 VIEW \ CELL元素的下标<某些场景可能有用>*/
-- (void) getUIControlsTouchIndex:(void(^)(UIResponder *ui,CCUILayoutUiMode *uim,NSInteger index))reback
-{
-    self.base.clickElementRb = ^(UIResponder *ui, CCUILayoutUiMode *uim, NSInteger index) {
-        !reback ? : reback(ui,uim,index);
-    };
-}
-
 /** MARK: 页面数据有所变动，及时更新页面布局 */
-- (void) updateUIControls:(NSMutableArray<CCUILayoutUiMode*> *)subviewModes
+- (void) updateUIControls:(NSMutableArray<CCUILayoutUiMode*> *)cc_subviewModes animation:(BOOL)isOpen
 {
-    self.base.dbMode = [NSMutableArray arrayWithArray:subviewModes];
+    self.base.dbMode = [NSMutableArray arrayWithArray:cc_subviewModes];
+    if (isOpen) {
+        [CCSpeedyTool cc_setInAanimation:self.tableView delay:0.25];
+    }
     [self.tableView reloadData];
 }
 
+/** MARK: 页面某一块UI元素变动，仅仅刷新某一块布局 */
+- (void) updateUIControl:(CCUILayoutUiMode*)cc_uimode animation:(BOOL)isOpen {
+     for (int i = 0; i < self.base.dbMode.count; i++) {
+         
+         CCUILayoutUiMode *one = self.base.dbMode[i];
+         
+         if (one.bind == cc_uimode.bind &&
+             [one.name isEqualToString:cc_uimode.name]) {
+             
+             [self.base.dbMode replaceObjectAtIndex:i withObject:cc_uimode];
+             NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:i];
+             
+             if (isOpen) {
+                 
+                 [UIView animateWithDuration:0.25 animations:^{
+                     [self.tableView reloadSections:indexSet
+                                   withRowAnimation:UITableViewRowAnimationFade];
+                 }];
+                 
+             }else{
+                 
+                 [self.tableView reloadSections:indexSet
+                               withRowAnimation:UITableViewRowAnimationNone];
+             }
+             
+             break;
+         }
+     }
+}
 
-
-
-/** MARK: 是否开启 分区布局调试 设置<默认关闭> */
+/** MARK: 是否开启 分区布局调试 设置<默认关闭>【要在 viewDidLoad 中调用】 */
 - (void) setDebugShowSection:(BOOL)isOpen
 {
     self.base.isDebugShowSection = isOpen;
@@ -232,6 +254,25 @@
             }
         }
     }
+}
+
+
+/** MARK: 根据 bind值 快速获取UI上的 uiMode */
+- (CCUILayoutUiMode* _Nullable) getClmFrom:(NSInteger) bindNum {
+    
+    if (self.cc_subviewModes.count) {
+        
+        for (NSInteger i = 0; i < self.cc_subviewModes.count; i++) {
+            CCUILayoutUiMode *object = self.cc_subviewModes[i];
+//            object.enumIndex = i;
+            if (object.bind.integerValue == bindNum) {
+                
+                return object;
+                break;
+            }
+        }
+    }
+    return Nil;
 }
 
 - (void)dealloc

@@ -12,7 +12,7 @@
 
 // MARK: 调试颜色
 // ————————————————————————————————————————————————————————
-/* TODO: --- 👇 暗黑 适配 <勿删-方便不同分支上代码拷贝不出问题> 促使多分支代码同步
+/* TODO: --- 👇【CCUILayout 工具】 暗黑依赖下的 适配
 #define CCUILayout_PLACE_COLOR        UIColor.WDZ_separatorColor2
 #define CCUILayout_RED                UIColor.WDZ_redColor
 #define CCUILayout_GREEN              UIColor.WDZ_greenColor
@@ -24,15 +24,13 @@
 #define CCUILayout_WHITE              UIColor.WDZ_whiteColor
 #define CCUILayout_CLEAR              UIColor.WDZ_clearColor
 #define CCUILayout_YELLOW             UIColor.WDZ_yellowColor
-#define SIGN_MK_RED                 UIColor.WDZ_redColor
-#define CCUILayout_PAGE_BG_COLOR      kThemeBackgroundColor
+#define CCUILayout_PAGE_BG_COLOR      WDZColorHexString(0xF7F7F7, 1, 0x191919, 1)
 #define CCUILayout_kThemeColor        UIColor.WDZ_themeColor
 #define CCUILayout_TEXT_COLOR1        CCUILayout_BLACK
 #define CCUILayout_TEXT_COLOR2        CCUILayout_DARK
-#define CCUILayout_DEBUG_RANDOM_COLOR (IS_OPEN_CCUILayout_DEBUG_COLOR ? CCUILayout_RANDOM_COLOR_LIGHT :  CCUILayout_WHITE)
 */
 
-/* TODO: --- 👇 非暗黑 适配 <勿删-方便不同分支上代码拷贝不出问题> 促使多分支代码同步*/
+/* TODO: --- 👇【CCUILayout 工具】 【非】暗黑依赖下的 适配 */
 #define CCUILayout_PLACE_COLOR        [UIColor colorWithRed:153/255.0 green:153/255.0 blue:153/255.0 alpha:1/1.0]
 #define CCUILayout_RED                [UIColor redColor]
 #define CCUILayout_GREEN              [UIColor greenColor]
@@ -44,12 +42,11 @@
 #define CCUILayout_WHITE              [UIColor whiteColor]
 #define CCUILayout_CLEAR              [UIColor clearColor]
 #define CCUILayout_YELLOW             [UIColor yellowColor]
-#define SIGN_MK_RED                 [UIColor redColor]
 #define CCUILayout_PAGE_BG_COLOR      CCUILayout_WHITE
 #define CCUILayout_kThemeColor        CCUILayout_YELLOW
 #define CCUILayout_TEXT_COLOR1        CCUILayout_BLACK
 #define CCUILayout_TEXT_COLOR2        CCUILayout_DARK
-#define CCUILayout_DEBUG_RANDOM_COLOR (IS_OPEN_CCUILayout_DEBUG_COLOR ? CCUILayout_RANDOM_COLOR_LIGHT :  CCUILayout_WHITE)
+
 
 // 轻随机色
 #define CCUILayout_RANDOM_COLOR_LIGHT CCUILayout_RANDOM_COLOR_LIGHT_MAKE(arc4random_uniform(156)+100, arc4random_uniform(156)+100, arc4random_uniform(156)+100, arc4random_uniform(156)+100)
