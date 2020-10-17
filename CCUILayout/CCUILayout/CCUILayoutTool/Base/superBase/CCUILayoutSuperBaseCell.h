@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CCUILayout_Block.h"
 #import "CCUILayoutUiMode.h"
 #import "CCUILayout_Enum.h"
 #import "CCUILayout_Font.h"

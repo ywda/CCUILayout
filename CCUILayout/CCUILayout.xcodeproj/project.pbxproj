@@ -314,19 +314,19 @@
 		8448057A253AC326004C1AC7 /* CCUITimeChLine */ = {
 			isa = PBXGroup;
 			children = (
-				8448057B253AC326004C1AC7 /* CCUITimeChLine.m */,
-				8448057C253AC326004C1AC7 /* CCUITimeChLine_Header.h */,
-				8448057D253AC326004C1AC7 /* CCUITimeChLineUM.h */,
-				8448057E253AC326004C1AC7 /* CCUITimeLineCellMode.h */,
-				8448057F253AC326004C1AC7 /* CCUITimeLineCell.m */,
-				84480580253AC326004C1AC7 /* CCUITimeLine.h */,
 				84480581253AC326004C1AC7 /* CCUITimeChLine_Enum.h */,
+				8448057C253AC326004C1AC7 /* CCUITimeChLine_Header.h */,
 				84480582253AC326004C1AC7 /* CCUITimeChLine_Static.h */,
 				84480583253AC326004C1AC7 /* CCUITimeChLine.h */,
+				8448057B253AC326004C1AC7 /* CCUITimeChLine.m */,
+				8448057D253AC326004C1AC7 /* CCUITimeChLineUM.h */,
 				84480584253AC326004C1AC7 /* CCUITimeChLineUM.m */,
-				84480585253AC326004C1AC7 /* CCUITimeLineCell.h */,
-				84480586253AC326004C1AC7 /* CCUITimeLineCellMode.m */,
+				84480580253AC326004C1AC7 /* CCUITimeLine.h */,
 				84480587253AC326004C1AC7 /* CCUITimeLine.m */,
+				84480585253AC326004C1AC7 /* CCUITimeLineCell.h */,
+				8448057F253AC326004C1AC7 /* CCUITimeLineCell.m */,
+				8448057E253AC326004C1AC7 /* CCUITimeLineCellMode.h */,
+				84480586253AC326004C1AC7 /* CCUITimeLineCellMode.m */,
 			);
 			name = CCUITimeChLine;
 			path = "../../日常VIEW/CCUIView/CCUIView/static<静止的>/For_Code/VIEW/UIView/UIView_025/CCUITimeChLine";
@@ -763,10 +763,10 @@
 		84C7A0A6253ACB1500C76C75 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				84C7A0AA253ACB1500C76C75 /* CCUILayoutBaseLogic.h */,
-				84C7A0AD253ACB1500C76C75 /* CCUILayoutBaseLogic.m */,
 				84C7A0A8253ACB1500C76C75 /* CCUILayoutBaseTabVC.h */,
 				84C7A0AC253ACB1500C76C75 /* CCUILayoutBaseTabVC.m */,
+				84C7A0AA253ACB1500C76C75 /* CCUILayoutBaseLogic.h */,
+				84C7A0AD253ACB1500C76C75 /* CCUILayoutBaseLogic.m */,
 				84C7A0AB253ACB1500C76C75 /* CCUILayoutBaseVC.h */,
 				84C7A0A7253ACB1500C76C75 /* CCUILayoutBaseVC.m */,
 				84C7A0B3253ACB1500C76C75 /* CCUILayoutBaseView.h */,
@@ -1194,13 +1194,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MTGQCB5B3L;
 				INFOPLIST_FILE = OTHER/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rac.dl.CCUILayout;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wandianzhang.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1212,13 +1213,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MTGQCB5B3L;
 				INFOPLIST_FILE = OTHER/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rac.dl.CCUILayout;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wandianzhang.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

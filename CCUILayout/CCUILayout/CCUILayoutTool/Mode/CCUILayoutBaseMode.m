@@ -19,7 +19,7 @@
         self.dbUi = [NSMutableArray array];
         self.reuseIdentifiers = [NSMutableArray array];
         self.dbElementNotes = [NSMutableArray array];
-        self.isDebugShowSection = NO; 
+        self.showDebugTag = NO; 
     }
     return self;
 }

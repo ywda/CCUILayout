@@ -36,11 +36,11 @@
     self.base = [CCUILayoutBaseMode new];
     [self setUpdateTab];
     
-    // 注册观察属性 dbMode
+    // 注册观察属性 base
     [self.base addObserver:self
-                   forKeyPath:@"dbMode"
-                      options:NSKeyValueObservingOptionNew
-                      context:NULL];
+                forKeyPath:@"showDebugTag"
+                   options:NSKeyValueObservingOptionNew
+                   context:NULL];
 }
 
 - (UITableViewCell *)zeroCell {
@@ -219,14 +219,14 @@
 /*  MARK: 👇 方便调试的展示方法*/
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    BOOL isCheckOk = (self.base.isDebugShowSection &&
+    BOOL isCheckOk = (self.base.showDebugTag &&
                       self.base.dbElementNotes.count) ? YES : NO;
     return isCheckOk ? self.base.dbElementNotes[section].height : 0.001;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    BOOL isCheckOk = (self.base.isDebugShowSection &&
+    BOOL isCheckOk = (self.base.showDebugTag &&
                       self.base.dbElementNotes.count) ? YES : NO;
     if (isCheckOk) {
         
@@ -311,7 +311,7 @@
 /** MARK: 是否开启 分区布局调试 设置<默认关闭>【要在 intWithFrame 中调用】 */
 - (void) setDebugShowSection:(BOOL)isOpen
 {
-    self.base.isDebugShowSection = isOpen;
+    self.base.showDebugTag = isOpen;
 }
 
 // 监控观察属性值变化
@@ -323,11 +323,11 @@
     NSLog(@"\n %s —— %@ ",__func__,change);
     
     // 逻辑：监控到 self.base.dbMode 有元素存在的时候在刷新说明性描述元素
-    if ([keyPath isEqualToString:@"dbMode"]) {
+    if ([keyPath isEqualToString:@"showDebugTag"]) {
         
-        if (((NSArray*)change[@"new"]).count > 0) {
+        if ([change[@"new"] intValue] == 1) {
             
-            if (self.base.isDebugShowSection == YES) {
+            if (self.base.dbMode.count > 0) {
                 self.base.dbElementNotes = [CCUILayoutDebugUiMode getCalculateNotesModesFrom:self.base.dbMode];
                 [self.tableView reloadData];
             }

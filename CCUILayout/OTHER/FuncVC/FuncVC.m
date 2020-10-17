@@ -16,6 +16,7 @@
 #import "CCUILayoutDemo05VC.h"
 #import "CCUILayoutDemo06VC.h"
 #import "CCUILayoutDemo07VC.h"
+#import "CCUILayoutDemo08VC.h"
 
 @interface FuncVC ()
 
@@ -85,6 +86,16 @@
                     [self createdemo006];
                 }
                 break;
+            case 6:
+                {
+                    [self createdemo007];
+                }
+                break;
+            case 7:
+                {
+                    [self createdemo008];
+                }
+                break;
             default:
                 break;
         }
@@ -127,6 +138,18 @@
 // MARK: 描述： CCUILayoutBaseView + 实例数组 创建
 - (void) createdemo006{
     CCUILayoutDemo06VC *vc = [CCUILayoutDemo06VC new];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+// MARK: 描述：一个没有写好的案例
+- (void) createdemo007{
+    CCUILayoutDemo07VC *vc = [CCUILayoutDemo07VC new];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+// MARK: 描述：电子控工页面调优模拟
+- (void) createdemo008{
+    CCUILayoutDemo08VC *vc = [CCUILayoutDemo08VC new];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

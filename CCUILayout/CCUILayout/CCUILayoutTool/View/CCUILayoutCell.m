@@ -12,10 +12,12 @@
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if([super initWithStyle:style reuseIdentifier:reuseIdentifier]){
+        
         // 方法调用
         if([self respondsToSelector:@selector(setUpDataAndUi)]){
              [self setUpDataAndUi];
         }
+        
         // 标记 cell
         if(IS_OPEN_CCUILayout_DEBUG_COLOR){
             self.backgroundColor = CCUILayout_RANDOM_COLOR_LIGHT;

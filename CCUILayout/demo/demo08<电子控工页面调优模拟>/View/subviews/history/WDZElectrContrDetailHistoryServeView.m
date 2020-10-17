@@ -10,12 +10,15 @@
 
 @implementation WDZElectrContrDetailHistoryServeView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)setUpDataAndUi {
+    
+    UILabel * lab = [UILabel new];
+    lab.text = @"历史服务";
+    lab.font = [UIFont systemFontOfSize:20];
+    lab.frame = CGRectMake(10, 10, 200, 30);
+    [self addSubview:lab];
+
+    self.backgroundColor = CCUILayout_RANDOM_COLOR_LIGHT;
 }
-*/
 
 @end

@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic)UIEdgeInsets edges;
 
 /** 是否开启调试分区开关 */
-@property(nonatomic,assign) BOOL isDebugShowSection;
+@property(nonatomic,assign) BOOL showDebugTag;
 /** 初始化 subviews 完成后进行数据回调 */
 @property(nonatomic,copy) void (^uisubviewsRb)(NSArray<UIResponder*>*,NSMutableArray<CCUILayoutUiMode*>*);
 /** 点击的 cell、view 元素下标 回调*/

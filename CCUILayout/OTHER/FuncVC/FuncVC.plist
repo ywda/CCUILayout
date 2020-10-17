@@ -70,6 +70,16 @@
 		<key>height</key>
 		<integer>90</integer>
 		<key>desc</key>
+		<string>描述：一个没有写好的案例</string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>8</integer>
+		<key>name</key>
+		<string>FuncCELL</string>
+		<key>height</key>
+		<integer>90</integer>
+		<key>desc</key>
 		<string>描述： 电子控工页面调优模拟&lt;对 CCUITimeChLine 工具进行调优&gt;</string>
 	</dict>
 </array>

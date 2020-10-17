@@ -36,6 +36,7 @@
         [self configUIControlsIsLoadDebug:NO
                              mainTabEdges:insets
                                adapterApp:NO];
+        [self setDebugShowSection:NO];
         [self setUpUi];
     }
     return self;
@@ -48,8 +49,6 @@
         weakSelf.cc_subviews = uis;
         weakSelf.cc_subviewModes = uims;
     }];
-    // FIXME: 设置 YES 方便查看 CML 设置 <注释开关> [CCUILayoutBaseView 中还有一个bug日志View不能展示，后面会处理下]
-    [self setDebugShowSection:NO];
     self.tableView.showsVerticalScrollIndicator = YES;
     [self updateUiRealyData];
 }
@@ -132,7 +131,5 @@
         }
     }
 }
-
-
 
 @end

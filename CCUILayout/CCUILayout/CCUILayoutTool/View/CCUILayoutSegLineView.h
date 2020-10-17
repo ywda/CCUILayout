@@ -1,23 +1,17 @@
 //
 //  CCUILayoutSegLineView.h
-//  CCUILayout
+//  WDZForAppStore
 //  MARK: 常用的基础分割线
-//  Created by Admin on 2020/10/17.
-//  Copyright © 2020 Admin. All rights reserved.
+//  Created by Admin on 2020/9/3.
+//  Copyright © 2020 Wandianzhang. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "CCUILayout_Unit_Header.h"
+#import "CCUILayoutView.h"
+#import "CCUILayout_Color.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CCUILayoutSegLineView : UIView
-
-/** view 上绑定的布局配置信息*/
-@property (nonatomic, strong) CCUILayoutUiMode * CLM;
-
-// TODO: 模板方法 <子 view 布局,以及初始化>
-- (void)setUpDataAndUi;
+@interface CCUILayoutSegLineView : CCUILayoutView
 
 @end
 

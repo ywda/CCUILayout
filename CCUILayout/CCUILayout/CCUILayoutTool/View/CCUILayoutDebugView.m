@@ -8,72 +8,10 @@
 //
 
 #import "CCUILayoutDebugView.h"
-#import "CCUILayout_Unit_Header.h"
-
-@interface CCUILayoutDebugViewMode ()
-
-@end
-
-@implementation CCUILayoutDebugViewMode
-
-/** MARK: 获取计算得到的描述文字高度数组 */
-+ (NSArray<CCUILayoutDebugViewMode*>*) getCalculateNotesModesFrom:(NSArray<CCUILayoutUiMode*>*)dbm
-{
-    
-    CGFloat w = [UIScreen mainScreen].bounds.size.width - 30;
-    
-    NSMutableArray<CCUILayoutDebugViewMode*>* noteModes = [NSMutableArray array];
-    
-    for (int i = 0; i < dbm.count; i++) {
-        
-        CCUILayoutUiMode *cLm = dbm[i];
-        
-        CCUILayoutDebugViewMode *dm = [CCUILayoutDebugViewMode getElementViewDesc:cLm];
-        
-        NSArray *segs = [dm.desc componentsSeparatedByString:@"\n"];
-        
-        for (NSString *object in segs) {
-            
-            CGSize size = [CCSpeedyTool cc_calculateTextSizeWithText:object
-                                                        WithTextFont:CCUILayout_FONT_PFSC_Regular_(12)
-                                                            WithMaxW:w];
-            CGFloat h = size.height;
-            
-            dm.height += h;
-        }
-        dm.height += 10;
-        [noteModes addObject:dm];
-    }
-    
-    return noteModes;
-}
-
-+ (CCUILayoutDebugViewMode*) getElementViewDesc:(CCUILayoutUiMode*)mode
-{
-    CCUILayoutDebugViewMode *um = [CCUILayoutDebugViewMode new];
-    
-    // 相关信息
-    NSString * name = [@"name：" stringByAppendingString:mode.name];
-    NSString * bind = [@"bind：" stringByAppendingString:[mode.bind stringValue]];
-    NSString *height = [@"height：" stringByAppendingString:[NSString stringWithFormat:@"%.2f",mode.height]];
-    NSString *desc = [@"desc：" stringByAppendingString:mode.desc];
-    
-    NSString *einfo = @"";
-    einfo = [einfo stringByAppendingString:[NSString stringWithFormat:@"%@\n",name]];
-    einfo = [einfo stringByAppendingString:[NSString stringWithFormat:@"%@\n",bind]];
-    einfo = [einfo stringByAppendingString:[NSString stringWithFormat:@"%@\n",height]];
-    einfo = [einfo stringByAppendingString:[NSString stringWithFormat:@"%@",desc]];
-    
-    um.desc = einfo;
-    
-    return um;
-}
-
-@end
-
-
-// MARK: 🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞
-
+#import "CCUILayout_Color.h"
+#import "CCUILayout_Font.h"
+#import "CCUILayout_Enum.h"
+#import <Masonry/Masonry.h>
 
 @interface CCUILayoutDebugView ()
 
@@ -88,6 +26,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         
+        self.backgroundColor = CCUILayout_BLACK;
         [self setUpDataAndUi];
     }
     return self;
@@ -128,7 +67,7 @@
     self.backgroundView.backgroundColor = CCUILayout_BLACK;
 }
 
-- (void)setWithElementInfo:(CCUILayoutDebugViewMode *)mode
+- (void)setWithElementInfo:(CCUILayoutDebugUiMode *)mode
 {
     
     self.Lab.text = mode.desc;

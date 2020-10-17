@@ -6,17 +6,13 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "CCUILayout_Unit_Header.h"
+#import "CCUILayoutSuperBaseView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CCUILayoutView : UIView
+@interface CCUILayoutView : CCUILayoutSuperBaseView
 
-/** view 上绑定的布局配置信息*/
-@property (nonatomic, strong) CCUILayoutUiMode * CLM;
-
-// TODO: 模板方法 <子 view 布局,以及初始化>
+/** MARK: 模板方法 <子 view 布局,以及初始化> */
 - (void)setUpDataAndUi;
 
 @end

@@ -8,25 +8,40 @@
 
 #import "WDZElectrContrDetailVedioHandleView.h"
 
+
+@interface WDZElectrContrDetailVedioHandleView ()
+
+@property(nonatomic,copy) void(^rbAct) (BOOL);
+@property(nonatomic,assign) BOOL tapBool;
+
+@end
+
 @implementation WDZElectrContrDetailVedioHandleView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)setUpDataAndUi {
+    
+    UILabel * lab = [UILabel new];
+    lab.text = @"播放器控制处理";
+    lab.font = [UIFont systemFontOfSize:20];
+    lab.frame = CGRectMake(10, 10, 200, 30);
+    [self addSubview:lab];
+    
+    
+    self.tapBool = NO;
+    self.backgroundColor = CCUILayout_RANDOM_COLOR_LIGHT;
 }
-*/
 
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        
-        
-    }
-    return self;
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    self.tapBool = !self.tapBool;
+    self.rbAct(self.tapBool);
+}
+
+- (void) updateWithRb:(void(^)(BOOL)) isHaveBarRb {
+    self.rbAct = ^(BOOL value) {
+        isHaveBarRb(value);
+    };
 }
 
 @end
+
