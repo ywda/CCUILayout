@@ -85,10 +85,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) updateUIControl:(CCUIContainerUiMode*)cc_uimode animation:(BOOL)isOpen;
 
 /** MARK: 更新 tableview 布局 */
-- (void)update_TabEdges:(UIEdgeInsets)edges;
+- (void)updateContainerEdges:(UIEdgeInsets)edges;
 
 /** MARK:  是否开启 分区布局调试 设置<默认关闭> 【要在 intWithFrame 中调用】*/
-- (void) setDebugShowSection:(BOOL)isOpen;
+- (void) setShowNoteView:(BOOL)isOpen;
 
 /** MARK: 根据 bind值 快速获取UI上的 uiMode */
 - (CCUIContainerUiMode*_Nullable) getClmFrom:(NSInteger) bindNum;

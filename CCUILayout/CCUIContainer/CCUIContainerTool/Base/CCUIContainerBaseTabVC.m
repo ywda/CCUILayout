@@ -231,7 +231,7 @@
 }
 
 /** MARK: 是否开启 分区布局调试 设置<默认关闭>【要在 viewDidLoad 中调用】 */
-- (void) setDebugShowSection:(BOOL)isOpen
+- (void) setShowNoteView:(BOOL)isOpen
 {
     self.base.showDebugTag = isOpen;
 }

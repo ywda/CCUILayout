@@ -36,7 +36,7 @@
         [self configUIControlsIsLoadDebug:NO
                              mainTabEdges:insets
                                adapterApp:NO];
-        [self setDebugShowSection:NO];
+        [self setShowNoteView:NO];
         [self setUpUi];
         
     }

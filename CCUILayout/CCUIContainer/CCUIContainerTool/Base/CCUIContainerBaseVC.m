@@ -64,7 +64,7 @@
                           adapterApp:(BOOL)isAdapter
 {
     [self setUpdateTab];
-    [self update_TabEdges:edges];
+    [self updateContainerEdges:edges];
     
     Class c = [self class];
     NSString *cName = NSStringFromClass(c);
@@ -110,7 +110,7 @@
              mainTabEdges:(UIEdgeInsets)edges
 {
     [self setUpdateTab];
-    [self update_TabEdges:edges];
+    [self updateContainerEdges:edges];
     
     CCUIContainerBaseLogic *checkLg = [CCUIContainerBaseLogic checkPropertyWithUIControls:subUis
                                                                                 layout:subLModes];
@@ -128,7 +128,7 @@
     [self setUpUI];
 }
 
-- (void)update_TabEdges:(UIEdgeInsets)edges
+- (void)updateContainerEdges:(UIEdgeInsets)edges
 {
     CGFloat top = edges.top;
     CGFloat left = edges.left;
@@ -312,7 +312,7 @@
      }
 }
 
-- (void) setDebugShowSection:(BOOL)isOpen
+- (void) setShowNoteView:(BOOL)isOpen
 {
     self.base.showDebugTag = isOpen;
 }

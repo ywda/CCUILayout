@@ -20,7 +20,7 @@
         // MARK: 通过 plist 方法创建 View 中的元素
 //       UIEdgeInsets insets = UIEdgeInsetsMake(0, 0, 0, 0);
 //       [self configUIControlsIsLoadDebug:NO mainTabEdges:insets adapterApp:NO];
-//       [self setDebugShowSection:YES];
+//       [self setShowNoteView:YES];
 //
         
         // MARK: 通过实例方法创建 View 中的元素
@@ -54,7 +54,7 @@
         // MARK: 通过 plist 方法创建 View 中的元素
 //       UIEdgeInsets insets = UIEdgeInsetsMake(0, 0, 0, 0);
 //       [self configUIControlsIsLoadDebug:NO mainTabEdges:insets adapterApp:NO];
-//       [self setDebugShowSection:YES];
+//       [self setShowNoteView:YES];
         
         
         // MARK: 通过实例方法创建 View 中的元素

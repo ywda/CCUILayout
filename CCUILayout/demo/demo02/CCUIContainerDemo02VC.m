@@ -55,7 +55,7 @@
 //    [self simulation_SubViews];
 //    [self simulation_Update_SubViews];
 //    [self simulation_SubViews_Touch];
-    [self setDebugShowSection:YES];
+    [self setShowNoteView:YES];
     
 }
 

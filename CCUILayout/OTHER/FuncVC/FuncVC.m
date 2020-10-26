@@ -29,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setDebugShowSection:YES];
+    [self setShowNoteView:YES];
     
     /** MARK: 返回所有的布局 view 类实例 <方便使用场景VC中操作>*/
     [self wholeUIControls:^(NSArray<UIResponder *> * subviews, NSMutableArray<CCUIContainerUiMode *> * cc_subviewModes) {
@@ -70,7 +70,7 @@
         [self.navigationController pushViewController:[[NSClassFromString(pageClass[index]) class] new] animated:YES];
     }];
     
-    [self setDebugShowSection:NO];
+    [self setShowNoteView:NO];
 }
 
 

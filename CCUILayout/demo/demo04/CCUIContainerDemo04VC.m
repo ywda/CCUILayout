@@ -47,7 +47,7 @@
     self.view.backgroundColor = UIColor.whiteColor;
     
     [self simulation_navBar];
-    [self setDebugShowSection:YES];
+    [self setShowNoteView:YES];
 }
 
 // MARK: 模拟当前项目中的导航条

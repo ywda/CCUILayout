@@ -57,7 +57,7 @@
                    layout:(NSArray<CCUIContainerUiMode*> *)subLModes
              mainTabEdges:(UIEdgeInsets)edges
 {
-    [self update_TabEdges:edges];
+    [self updateContainerEdges:edges];
     
     CCUIContainerBaseLogic *checkLg = [CCUIContainerBaseLogic checkPropertyWithUIControls:subUis
                                                                                 layout:subLModes];
@@ -66,7 +66,7 @@
     [self setUpUI];
 }
 
-- (void)update_TabEdges:(UIEdgeInsets)edges
+- (void)updateContainerEdges:(UIEdgeInsets)edges
 {
     self.base.edges = edges;
     [self update_scroll];
@@ -111,7 +111,7 @@
 - (void) configUIControlsIsLoadDebug:(BOOL)isDebug
                         mainTabEdges:(UIEdgeInsets)edges
                           adapterApp:(BOOL)isAdapter{
-    [self update_TabEdges:edges];
+    [self updateContainerEdges:edges];
     
     Class c = [self class];
     NSString *cName = NSStringFromClass(c);
@@ -219,7 +219,7 @@
      }
 }
 
-- (void) setDebugShowSection:(BOOL)isOpen
+- (void) setShowNoteView:(BOOL)isOpen
 {
     self.base.showDebugTag = isOpen;
 }

@@ -190,7 +190,7 @@
         //[weakSelf updateUIControls:@[]];
     }];
     
-    [self setDebugShowSection:NO];
+    [self setShowNoteView:NO];
 }
 
 - (void)viewWillAppear:(BOOL)animated

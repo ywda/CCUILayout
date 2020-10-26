@@ -28,7 +28,7 @@
         NSLog(@"uis = %@ -- 子视图的个数 %ld",subviews,subviews.count);
     }];
     
-    [self setDebugShowSection:YES];
+    [self setShowNoteView:YES];
     
 }
 
