@@ -6,11 +6,11 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-#import "CCUILayoutCell.h"
+#import "CCUIContainerCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WDZLoginCenterSegLine : CCUILayoutCell
+@interface WDZLoginCenterSegLine : CCUIContainerCell
 
 @end
 

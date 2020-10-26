@@ -1,13 +1,14 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'CCUILayout' do
+target 'CCUIContainer' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
  pod 'Masonry', '~> 1.1.0'
  pod 'MJExtension', '~> 3.2.1'
  pod 'MJRefresh', '~> 3.2.2'
+ pod 'QMUIKit', '~> 4.1.1'
 
-  # Pods for CCUILayout
+  # Pods for CCUIContainer
 
 end

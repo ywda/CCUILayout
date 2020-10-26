@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-@interface PodsDummy_Pods_CCUILayout : NSObject
+@interface PodsDummy_Pods_CCUIContainer : NSObject
 @end
-@implementation PodsDummy_Pods_CCUILayout
+@implementation PodsDummy_Pods_CCUIContainer
 @end

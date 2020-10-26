@@ -1,6 +1,6 @@
 //
 //  WDZWDZElectrContrDetailMain.m
-//  CCUILayout
+//  CCUIContainer
 //
 //  Created by Admin on 2020/10/17.
 //  Copyright © 2020 Admin. All rights reserved.
@@ -12,7 +12,7 @@
 #import "WDZElectrContrDetailVedioBarView.h"
 #import "WDZElectrContrDetailHistoryServeView.h"
 #import "WDZElectrContrDetailActHeadView.h"
-#import "CCUILayoutSegLineView.h"
+#import "CCUIContainerSegLineView.h"
 
 @interface WDZWDZElectrContrDetailMain ()
 
@@ -36,7 +36,7 @@
         [self configUIControlsIsLoadDebug:NO
                              mainTabEdges:insets
                                adapterApp:NO];
-        [self setDebugShowSection:NO];
+        [self setDebugShowSection:YES];
         [self setUpUi];
     }
     return self;
@@ -45,11 +45,11 @@
 - (void)setUpUi {
     
     __weak typeof(self) weakSelf = self;
-    [self wholeUIControls:^(NSArray<UIResponder *> * uis, NSMutableArray<CCUILayoutUiMode *> * uims) {
+    [self wholeUIControls:^(NSArray<UIResponder *> * uis, NSMutableArray<CCUIContainerUiMode *> * uims) {
         weakSelf.cc_subviews = uis;
         weakSelf.cc_subviewModes = uims;
     }];
-    self.tableView.showsVerticalScrollIndicator = YES;
+    //self.tableView.showsVerticalScrollIndicator = YES;
     [self updateUiRealyData];
 }
 
@@ -61,7 +61,7 @@
     for (int i = 0; i < self.cc_subviewModes.count; i++) {
 
         UIResponder *ui = self.cc_subviews[i];
-        CCUILayoutUiMode *clm = self.cc_subviewModes[i];
+        CCUIContainerUiMode *clm = self.cc_subviewModes[i];
         
         // MARK: ·视频控制·
         if (clm.bind.intValue == 1) {
@@ -70,8 +70,8 @@
             [self.vedioHandle updateWithRb:^(BOOL havePlayBar) {
                 
                 // 控制显隐·视频播放进度条·
-                CCUILayoutUiMode *tmp = [weakSelf getClmFrom:2];
-                // FIXME: 非常有必要，否则效果突兀 <原因：CCUILayoutBaseView 中cell背景色均去除了>
+                CCUIContainerUiMode *tmp = [weakSelf getClmFrom:2];
+                // FIXME: 非常有必要，否则效果突兀 <原因：CCUIContainerBaseView 中cell背景色均去除了>
                 tmp.bgColor = UIColor.whiteColor;
                 if (tmp) {
                     tmp.height = havePlayBar?(35+90+15+10):0;
@@ -99,7 +99,8 @@
         // MARK: ·详情描述·
         if (clm.bind.intValue == 4) {
             
-            self.orderInfoView = (WDZElectrContrDetailOrderInfoView*)ui;;
+            self.orderInfoView = (WDZElectrContrDetailOrderInfoView*)ui;
+            
         }
 
         // MARK: ·今日历史服务·
@@ -118,14 +119,14 @@
         // MARK: ·分割线颜色·
         if (clm.bind.intValue == -1) {
             
-            CCUILayoutSegLineView *uiSegline = (CCUILayoutSegLineView*)ui;
+            CCUIContainerSegLineView *uiSegline = (CCUIContainerSegLineView*)ui;
             uiSegline.backgroundColor =  UIColor.clearColor;
         }
 
         // MARK: ·底部留白颜色·
         if (clm.bind.intValue == -2) {
             
-            CCUILayoutSegLineView *uiSpace = (CCUILayoutSegLineView*)ui;
+            CCUIContainerSegLineView *uiSpace = (CCUIContainerSegLineView*)ui;
             
             uiSpace.backgroundColor = UIColor.clearColor;
         }

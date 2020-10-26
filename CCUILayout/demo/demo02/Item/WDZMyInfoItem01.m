@@ -1,6 +1,6 @@
 //
 //  WDZMyInfoItem01.m
-//  CCUILayout
+//  CCUIContainer
 //  MARK: 姓名、手机号、邮箱、部门 复用 CELL
 //  Created by Admin on 2020/4/30.
 //  Copyright © 2020 Admin. All rights reserved.
@@ -25,7 +25,7 @@
 @property (nonatomic , strong) UITextField *TF;
 
 /** 输入文字的 回调*/
-@property (nonatomic , copy) CCUILayout_block_str tfBlock;
+@property (nonatomic , copy) CCUIContainer_block_str tfBlock;
 
 
 @end
@@ -53,17 +53,17 @@
     [self addSubview:self.TF];
 
     self.Lab.text = @"员工照";
-    self.Lab.font = CCUILayout_FONT_PFSC_Regular_14;
+    self.Lab.font = CCUIContainer_FONT_PFSC_Regular_14;
 
 }
 
 - (void) setUpColor
 {
-    self.backgroundColor = IS_OPEN_CCUILayout_DEBUG_COLOR ? CCUILayout_RANDOM_COLOR_LIGHT : CCUILayout_WHITE;
-    self.Lab.textColor = CCUILayout_TEXT_COLOR1;
+    self.backgroundColor = IS_OPEN_CCUIContainer_DEBUG_COLOR ? CCUIContainer_RANDOM_COLOR_LIGHT : CCUIContainer_WHITE;
+    self.Lab.textColor = CCUIContainer_TEXT_COLOR1;
     
-    self.Lab.backgroundColor = IS_OPEN_CCUILayout_DEBUG_COLOR ? CCUILayout_RANDOM_COLOR_LIGHT : CCUILayout_CLEAR;
-    self.TF.backgroundColor = IS_OPEN_CCUILayout_DEBUG_COLOR ? CCUILayout_RANDOM_COLOR_LIGHT : CCUILayout_CLEAR;
+    self.Lab.backgroundColor = IS_OPEN_CCUIContainer_DEBUG_COLOR ? CCUIContainer_RANDOM_COLOR_LIGHT : CCUIContainer_CLEAR;
+    self.TF.backgroundColor = IS_OPEN_CCUIContainer_DEBUG_COLOR ? CCUIContainer_RANDOM_COLOR_LIGHT : CCUIContainer_CLEAR;
 }
 
 
@@ -83,7 +83,7 @@
     }];
 }
 
-- (void) setUpCellWith:(WDZMyInfoItem01Mode*)mode click:(CCUILayout_block_str)block
+- (void) setUpCellWith:(WDZMyInfoItem01Mode*)mode click:(CCUIContainer_block_str)block
 {
     //...设置更新头像代码...
 

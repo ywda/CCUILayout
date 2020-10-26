@@ -1,6 +1,6 @@
 //
 //  WDZElectrContrDetailVedioHandleView.m
-//  CCUILayout
+//  CCUIContainer
 //
 //  Created by Admin on 2020/10/17.
 //  Copyright © 2020 Admin. All rights reserved.
@@ -28,13 +28,13 @@
     
     
     self.tapBool = NO;
-    self.backgroundColor = CCUILayout_RANDOM_COLOR_LIGHT;
+    self.backgroundColor = CCUIContainer_RANDOM_COLOR_LIGHT;
 }
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     self.tapBool = !self.tapBool;
-    self.rbAct(self.tapBool);
+    !self.rbAct?:self.rbAct(self.tapBool);
 }
 
 - (void) updateWithRb:(void(^)(BOOL)) isHaveBarRb {

@@ -1,16 +1,16 @@
 //
 //  Demo06View.h
-//  CCUILayout
+//  CCUIContainer
 //
 //  Created by Admin on 2020/5/18.
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-#import "CCUILayoutBaseView.h"
+#import "CCUIContainerBaseView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Demo06View : CCUILayoutBaseView
+@interface Demo06View : CCUIContainerBaseView
 
 @end
 

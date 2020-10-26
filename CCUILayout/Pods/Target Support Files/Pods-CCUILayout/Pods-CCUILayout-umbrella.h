@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_CCUILayoutVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_CCUILayoutVersionString[];
+FOUNDATION_EXPORT double Pods_CCUIContainerVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_CCUIContainerVersionString[];
 

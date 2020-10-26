@@ -1,6 +1,6 @@
 //
 //  WDZElectrContrDetailActHeadView.m
-//  CCUILayout
+//  CCUIContainer
 //
 //  Created by Admin on 2020/10/17.
 //  Copyright © 2020 Admin. All rights reserved.
@@ -18,7 +18,7 @@
     lab.frame = CGRectMake(10, 10, 200, 30);
     [self addSubview:lab];
     
-    self.backgroundColor = CCUILayout_RANDOM_COLOR_LIGHT;
+    self.backgroundColor = CCUIContainer_RANDOM_COLOR_LIGHT;
 }
 
 @end

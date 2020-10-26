@@ -1,16 +1,16 @@
 //
 //  WDZElectrContrDetailVedioHandleView.h
-//  CCUILayout
+//  CCUIContainer
 //
 //  Created by Admin on 2020/10/17.
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-#import "CCUILayoutView.h"
+#import "CCUIContainerView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WDZElectrContrDetailVedioHandleView : CCUILayoutView
+@interface WDZElectrContrDetailVedioHandleView : CCUIContainerView
 
 - (void) updateWithRb:(void(^)(BOOL)) isHaveBarRb;
 

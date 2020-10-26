@@ -1,6 +1,6 @@
 //
 //  WDZMyInfoItem00.m
-//  CCUILayout
+//  CCUIContainer
 //  MARK: 头像、员工照 复用 CELL
 //  Created by Admin on 2020/4/30.
 //  Copyright © 2020 Admin. All rights reserved.
@@ -53,14 +53,14 @@
     [self addSubview:self.Img2];
     
     self.Lab1.text = @"员工照";
-    self.Lab1.font = CCUILayout_FONT_PFSC_Regular_14;
+    self.Lab1.font = CCUIContainer_FONT_PFSC_Regular_14;
     self.Lab2.text = @"上传员工照";
-    self.Lab2.font = CCUILayout_FONT_PFSC_Regular_14;
+    self.Lab2.font = CCUIContainer_FONT_PFSC_Regular_14;
     self.Lab2.textAlignment = NSTextAlignmentRight;
     
     self.Img1.image = [UIImage imageNamed:@"tmpImg"];
     self.Img2.image = [UIImage imageNamed:@"teal"];
-    [CCSpeedyTool cc_chageControlCircularWith:self.Img1 AndSetCornerRadius:24 SetBorderWidth:0 SetBorderColor:CCUILayout_CLEAR canMasksToBounds:YES];
+    [CCSpeedyTool cc_chageControlCircularWith:self.Img1 AndSetCornerRadius:24 SetBorderWidth:0 SetBorderColor:CCUIContainer_CLEAR canMasksToBounds:YES];
     
     // 初始化设置
     self.Img1.alpha = 1;
@@ -68,12 +68,12 @@
 
 - (void) setUpColor
 {
-    self.backgroundColor = IS_OPEN_CCUILayout_DEBUG_COLOR?CCUILayout_RANDOM_COLOR_LIGHT:CCUILayout_WHITE;
-    self.Lab1.textColor = CCUILayout_TEXT_COLOR1;
-    self.Lab2.textColor = CCUILayout_GREEN;
-    self.Img1.backgroundColor = IS_OPEN_CCUILayout_DEBUG_COLOR?CCUILayout_RANDOM_COLOR_LIGHT:CCUILayout_CLEAR;
-    self.Lab1.backgroundColor = IS_OPEN_CCUILayout_DEBUG_COLOR?CCUILayout_RANDOM_COLOR_LIGHT:CCUILayout_CLEAR;
-    self.Img2.backgroundColor = IS_OPEN_CCUILayout_DEBUG_COLOR?CCUILayout_RANDOM_COLOR_LIGHT:CCUILayout_CLEAR;
+    self.backgroundColor = IS_OPEN_CCUIContainer_DEBUG_COLOR?CCUIContainer_RANDOM_COLOR_LIGHT:CCUIContainer_WHITE;
+    self.Lab1.textColor = CCUIContainer_TEXT_COLOR1;
+    self.Lab2.textColor = CCUIContainer_GREEN;
+    self.Img1.backgroundColor = IS_OPEN_CCUIContainer_DEBUG_COLOR?CCUIContainer_RANDOM_COLOR_LIGHT:CCUIContainer_CLEAR;
+    self.Lab1.backgroundColor = IS_OPEN_CCUIContainer_DEBUG_COLOR?CCUIContainer_RANDOM_COLOR_LIGHT:CCUIContainer_CLEAR;
+    self.Img2.backgroundColor = IS_OPEN_CCUIContainer_DEBUG_COLOR?CCUIContainer_RANDOM_COLOR_LIGHT:CCUIContainer_CLEAR;
 }
 
 - (void)add_Tap{

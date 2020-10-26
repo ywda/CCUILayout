@@ -1,12 +1,12 @@
 //
 //  WDZMyInfoItem00.h
-//  CCUILayout
+//  CCUIContainer
 //  MARK: 头像、员工照 复用 CELL
 //  Created by Admin on 2020/4/30.
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-#import "CCUILayoutCell.h"
+#import "CCUIContainerCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // MARK: 🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞
 
-@interface WDZMyInfoItem00 : CCUILayoutCell
+@interface WDZMyInfoItem00 : CCUIContainerCell
 
 
 - (void) setUpCellWith:(WDZMyInfoItem00Mode*)mode click:(dispatch_block_t)block;

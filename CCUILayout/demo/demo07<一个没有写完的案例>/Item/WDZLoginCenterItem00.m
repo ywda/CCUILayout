@@ -20,7 +20,7 @@
 {
     self.switchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self addSubview:self.switchBtn];
-    self.switchBtn.backgroundColor = CCUILayout_RANDOM_COLOR_LIGHT;
+    self.switchBtn.backgroundColor = CCUIContainer_RANDOM_COLOR_LIGHT;
 }
 
 

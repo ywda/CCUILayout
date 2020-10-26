@@ -50,7 +50,7 @@
 		<key>height</key>
 		<integer>90</integer>
 		<key>desc</key>
-		<string>描述： CCUILayoutBaseView + plist 创建</string>
+		<string>描述： CCUIContainerBaseView + plist 创建</string>
 	</dict>
 	<dict>
 		<key>bind</key>
@@ -81,6 +81,16 @@
 		<integer>90</integer>
 		<key>desc</key>
 		<string>描述： 电子控工页面调优模拟&lt;对 CCUITimeChLine 工具进行调优&gt;</string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>9</integer>
+		<key>name</key>
+		<string>FuncCELL</string>
+		<key>height</key>
+		<integer>90</integer>
+		<key>desc</key>
+		<string>描述： 使用 CCUILayoutBaseScrollView 实现的 demo</string>
 	</dict>
 </array>
 </plist>

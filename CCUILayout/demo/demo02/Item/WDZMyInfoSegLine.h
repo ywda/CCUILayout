@@ -1,16 +1,16 @@
 //
 //  WDZMyInfoSegLine.h
-//  CCUILayout
+//  CCUIContainer
 //
 //  Created by Admin on 2020/4/30.
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-#import "CCUILayoutView.h"
+#import "CCUIContainerView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WDZMyInfoSegLine : CCUILayoutView
+@interface WDZMyInfoSegLine : CCUIContainerView
 
 @end
 

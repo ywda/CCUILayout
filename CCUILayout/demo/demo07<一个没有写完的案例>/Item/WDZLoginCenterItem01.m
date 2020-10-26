@@ -20,7 +20,7 @@
 {
     self.appLogo = [UIImageView new];
     [self addSubview:self.appLogo];
-    self.appLogo.backgroundColor = CCUILayout_RANDOM_COLOR_LIGHT;
+    self.appLogo.backgroundColor = CCUIContainer_RANDOM_COLOR_LIGHT;
 }
 
 - (void)layoutSubviews

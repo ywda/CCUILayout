@@ -1,6 +1,6 @@
 //
 //  Demo05View.m
-//  CCUILayout
+//  CCUIContainer
 //
 //  Created by Admin on 2020/5/18.
 //  Copyright © 2020 Admin. All rights reserved.
@@ -28,12 +28,12 @@
 //        NSMutableArray *uiMs = [NSMutableArray array];
 //        for (int i = 0; i < 5; i++) {
 //            // MARK: 模拟传入实例对象值
-//            //CCUILayoutView *tmp = [CCUILayoutView new];
+//            //CCUIContainerView *tmp = [CCUIContainerView new];
 //            WDZMyInfoItem00 *tmp = [WDZMyInfoItem00 new];
 //            // 不能在这里 为 tmp 中添加子元素 <tmp 是独立封装好的 view 类>
 //            [uis addObject:tmp];
 //
-//            CCUILayoutUiMode *cm = [CCUILayoutUiMode new];
+//            CCUIContainerUiMode *cm = [CCUIContainerUiMode new];
 //            cm.height = 60;
 //            cm.bind = [[NSNumber alloc] initWithInt:i];
 //            [uiMs addObject:cm];
@@ -62,12 +62,12 @@
 //        NSMutableArray *uiMs = [NSMutableArray array];
 //        for (int i = 0; i < 5; i++) {
 //            // MARK: 模拟传入实例对象值
-//            //CCUILayoutView *tmp = [CCUILayoutView new];
+//            //CCUIContainerView *tmp = [CCUIContainerView new];
 //            WDZMyInfoItem00 *tmp = [WDZMyInfoItem00 new];
 //            // 不能在这里 为 tmp 中添加子元素 <tmp 是独立封装好的 view 类>
 //            [uis addObject:tmp];
 //
-//            CCUILayoutUiMode *cm = [CCUILayoutUiMode new];
+//            CCUIContainerUiMode *cm = [CCUIContainerUiMode new];
 //            cm.height = 60;
 //            cm.bind = [[NSNumber alloc] initWithInt:i];
 //            [uiMs addObject:cm];

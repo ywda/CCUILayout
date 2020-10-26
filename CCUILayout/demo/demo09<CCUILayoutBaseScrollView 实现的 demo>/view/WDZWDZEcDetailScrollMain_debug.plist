@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>bind</key>
+		<integer>1</integer>
+		<key>name</key>
+		<string>WDZElectrContrDetailOrderInfoView</string>
+		<key>height</key>
+		<integer>120</integer>
+		<key>desc</key>
+		<string>👉描述：视频控制视图 </string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>2</integer>
+		<key>name</key>
+		<string>WDZElectrContrDetailOrderInfoView</string>
+		<key>height</key>
+		<integer>200</integer>
+		<key>desc</key>
+		<string>👉描述：视频控制视图 </string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>3</integer>
+		<key>name</key>
+		<string>WDZElectrContrDetailOrderInfoView</string>
+		<key>height</key>
+		<integer>300</integer>
+		<key>desc</key>
+		<string>👉描述：视频控制视图 </string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>4</integer>
+		<key>name</key>
+		<string>WDZElectrContrDetailOrderInfoView</string>
+		<key>height</key>
+		<integer>400</integer>
+		<key>desc</key>
+		<string>👉描述：视频控制视图 </string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>5</integer>
+		<key>name</key>
+		<string>WDZElectrContrDetailOrderInfoView</string>
+		<key>height</key>
+		<integer>450</integer>
+		<key>desc</key>
+		<string>👉描述：视频控制视图 </string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>6</integer>
+		<key>name</key>
+		<string>WDZElectrContrDetailOrderInfoView</string>
+		<key>height</key>
+		<integer>500</integer>
+		<key>desc</key>
+		<string>👉描述：视频控制视图 </string>
+	</dict>
+	<dict>
+		<key>bind</key>
+		<integer>7</integer>
+		<key>name</key>
+		<string>WDZElectrContrDetailOrderInfoView</string>
+		<key>height</key>
+		<integer>550</integer>
+		<key>desc</key>
+		<string>👉描述：视频控制视图 </string>
+	</dict>
+</array>
+</plist>

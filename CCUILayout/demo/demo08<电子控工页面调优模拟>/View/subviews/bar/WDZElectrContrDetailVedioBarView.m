@@ -1,6 +1,6 @@
 //
 //  WDZElectrContrDetailVedioBarView.m
-//  CCUILayout
+//  CCUIContainer
 //
 //  Created by Admin on 2020/10/17.
 //  Copyright © 2020 Admin. All rights reserved.
@@ -21,7 +21,7 @@
 - (CCUITimeChLine *)chTimeLine {
     if (!_chTimeLine) {
         _chTimeLine = [CCUITimeChLine new];
-        [_chTimeLine setChStepType:(CCUITimeChStepTypeMin)];
+        [_chTimeLine setChStepType:(CCUITimeChStepTypeDay)];
     }
     return _chTimeLine;
 }
@@ -34,7 +34,7 @@
     lab.frame = CGRectMake(10, 10, 200, 30);
     [self addSubview:lab];
     
-    self.backgroundColor = CCUILayout_RANDOM_COLOR_LIGHT;
+    self.backgroundColor = CCUIContainer_RANDOM_COLOR_LIGHT;
     
     
     self.chTimeLine.frame = CGRectMake(0, 50, UIScreen.mainScreen.bounds.size.width, 90);

@@ -20,12 +20,12 @@
 {
     self.container = [UIView new];
     [self addSubview:self.container];
-    self.container.backgroundColor = CCUILayout_RANDOM_COLOR_LIGHT;
+    self.container.backgroundColor = CCUIContainer_RANDOM_COLOR_LIGHT;
     
     [CCSpeedyTool cc_chageControlCircularWith:self.container
                            AndSetCornerRadius:2
                                SetBorderWidth:0.75
-                               SetBorderColor:CCUILayout_LGRAY
+                               SetBorderColor:CCUIContainer_LGRAY
                              canMasksToBounds:YES];
 }
 

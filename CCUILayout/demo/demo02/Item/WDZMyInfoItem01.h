@@ -1,12 +1,12 @@
 //
 //  WDZMyInfoItem01.h
-//  CCUILayout
+//  CCUIContainer
 //  MARK: 姓名、手机号、邮箱、部门 复用 CELL
 //  Created by Admin on 2020/4/30.
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-#import "CCUILayoutCell.h"
+#import "CCUIContainerCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -23,9 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 // MARK: 🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞
 
-@interface WDZMyInfoItem01 : CCUILayoutCell
+@interface WDZMyInfoItem01 : CCUIContainerCell
 
-- (void) setUpCellWith:(WDZMyInfoItem01Mode*)mode click:(CCUILayout_block_str)block;
+- (void) setUpCellWith:(WDZMyInfoItem01Mode*)mode click:(CCUIContainer_block_str)block;
 - (void) setUpCellWithLab:(NSString*)lab;
 
 
